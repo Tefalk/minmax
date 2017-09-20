@@ -24,12 +24,13 @@ class ButtonNode(scene.SpriteNode):
 class MyScene(scene.Scene):
     def setup(self):
         center = self.size/2
+        high = self.size/1.9
+        self.sprite = scene.SpriteNode('world.PNG', parent=self, position=self.size/.75)
         self.sprite = scene.SpriteNode('spc:PlayerLife1Orange', parent=self, position=center)
         ButtonNode('←', parent=self, position=center - (300,  300))
         ButtonNode('→', parent=self, position=center - (100,  300))
         ButtonNode('↓', parent=self, position=center + (100, -300))
         ButtonNode('↑', parent=self, position=center + (300, -300))
-        self.sprite = scene.SpriteNode('world.PNG', parent=self, position=self.size/.75)
            
     def touch_began(self, touch):
         for node in self.children:
